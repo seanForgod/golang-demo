@@ -1,7 +1,6 @@
 package main
 
 import (
-	"github.com/joho/godotenv"
 	"io"
 	"log"
 	"net"
@@ -41,7 +40,7 @@ func commonHandler(writer http.ResponseWriter, request *http.Request) {
 
 // add environment variable to response header
 func addEvnVariableToResponseHeader(writer http.ResponseWriter) {
-	godotenv.Load()
+	os.Setenv("VERSION", "0.0.1")
 	version := os.Getenv("VERSION")
 	log.Printf("the local ststem var, VERSION: [%s]", version)
 	writer.Header().Set("VERSION", version)
@@ -49,7 +48,7 @@ func addEvnVariableToResponseHeader(writer http.ResponseWriter) {
 
 // print client ip, request path and  response status code
 func printClientIpAndResponseStatus(request *http.Request, statusCode int) {
-	log.Printf("request client ip :[%s],request path: [%s], response status code : [%d]", GetClientIp(request), request.URL.Path, statusCode)
+	log.Printf("request client ip :[%s],request path: [%s], response status code : [%d]", getClientIp(request), request.URL.Path, statusCode)
 }
 
 // request header add response header
@@ -61,7 +60,7 @@ func requestHeaderAddResponseHeader(writer http.ResponseWriter, request *http.Re
 }
 
 // GetClientIp /**
-func GetClientIp(request *http.Request) string {
+func getClientIp(request *http.Request) string {
 	ip := request.Header.Get("X-Real-IP")
 	if net.ParseIP(ip) != nil {
 		return ip
