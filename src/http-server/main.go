@@ -11,7 +11,7 @@ import (
 
 func main() {
 	http.HandleFunc("/", commonHandler)
-	log.Fatal(http.ListenAndServe("localhost:80", nil))
+	log.Fatal(http.ListenAndServe("0.0.0.0:80", nil))
 }
 
 // common request handler
