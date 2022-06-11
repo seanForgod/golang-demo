@@ -11,4 +11,4 @@ FROM busybox
 EXPOSE 80
 COPY --from=build  /httpserver /httpserver
 WORKDIR /httpserver
-ENTRYPOINT ["/http-server"]
+ENTRYPOINT ["./http-server"]

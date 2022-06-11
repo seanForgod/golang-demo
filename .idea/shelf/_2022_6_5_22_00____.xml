@@ -1,0 +1,14 @@
+<changelist name="在进行签出之前于_2022_6_5_22_00_取消提交了变更_[变更]" date="1654437631028" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/在进行签出之前于_2022_6_5_22_00_取消提交了变更_[变更]/shelved.patch" />
+  <option name="DESCRIPTION" value="在进行签出之前于 2022/6/5 22:00 取消提交了变更 [变更]" />
+  <binary>
+    <option name="BEFORE_PATH" value="go.sum" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="vendor/github.com/joho/godotenv/LICENCE" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+</changelist>
